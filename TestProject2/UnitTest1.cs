@@ -11,11 +11,11 @@ namespace TestProject2
     {
         [Theory]
         [MemberData(nameof(Data))]
-        public Task Test1(object input)
+        public Task Test1(string input)
         {
             return Verifier.Verify(input);
         }
 
-        public static IEnumerable<object[]> Data => new[] { new[] { new { name = "Alice " } }, new[] { new { name = "Bob" } } };
+        public static IEnumerable<object[]> Data => new[] { new[] { "Alice" }, new[] { "Bob" } };
     }
 }
